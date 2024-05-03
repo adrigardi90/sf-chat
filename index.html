@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<body>
+
+<div class="">
+ <h1>This is a Heading</h1>
+ <p>This is a paragraph.</p>
+ <p>This is another paragraph.</p>
+</div>
+
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+      window.addEventListener("onEmbeddedMessagingReady", () => {
+          console.log("Received the onEmbeddedMessagingReady event…");
+          embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"email" : "test@skilling.com"});
+      });
+
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DKH000000GzuW',
+				'Messaging_web_test',
+				'https://app-drive-9015--ad.sandbox.my.site.com/ESWMessagingwebtest1714488384907',
+				{
+					scrt2URL: 'https://app-drive-9015--ad.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://app-drive-9015--ad.sandbox.my.site.com/ESWMessagingwebtest1714488384907/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+</body>
+</html>
